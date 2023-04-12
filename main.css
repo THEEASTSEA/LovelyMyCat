@@ -4,22 +4,48 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.header .inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  top: 0px;
+  z-index: 10;
+  border: 5px solid goldenrod;
+  background-color: black;
+  text-align: center;
+}
+
+
+
 .inner .list {
-  width: auto;
+  width: inherit;
   height: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
-.inner {
+.contents .inner {
   max-width: 600px;
 }
 
 h1 {
+  margin-top: 100px;
   text-align: center;
   color: goldenrod;
   font-weight: 900;
@@ -35,27 +61,22 @@ h1 {
   margin: 10px;
 }
 
-.modal {
-  display: none;
-  z-index: 500;
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.footer .inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 40px;
   position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.modalBox {
-  position: relative;
+  bottom: 0px;
+  z-index: 10;
+  background-color: goldenrod;
   text-align: center;
-  top: 50%;
-  left: 50%;
-  position: sticky;
 }
-
-p img:hover {
-  cursor: -webkit-zoom-in;
-}
-
-/* image modal end */

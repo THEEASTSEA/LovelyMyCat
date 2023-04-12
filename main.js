@@ -16,7 +16,11 @@ async function dongWithFetch() {
 
 for (let i = 0; i < 15; i++) {
   dongWithFetch()
+  const a = document.querySelector('img')
 }
+
+const abc = document.querySelector('img')
+console.log(abc)
 
 // 무한 스크롤
 // window.innerHeight : 브라우저 영역의 높이
@@ -28,7 +32,7 @@ window.addEventListener('scroll', () => {
     // const toAdd = document.createElement('img');
     // toAdd.src = image
     // document.querySelector(".list").appendChild(toAdd);
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 6; i++) {
       dongWithFetch()
     }
   }
