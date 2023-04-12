@@ -6,13 +6,17 @@ body {
   justify-content: center;
 }
 
-.list {
+.inner .list {
   width: auto;
   height: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+.inner {
+  max-width: 600px;
 }
 
 h1 {
@@ -24,32 +28,33 @@ h1 {
 
 .list img {
   border-radius: 30px;
-  margin: 20px;
-  width: 300px;
-  height: 300px;
+  width: 150px;
+  height: 150px;
   border: 5px solid goldenrod;
+  margin: 5px;
 }
 
-#lmask.show {
+.modal {
+  display: none;
+  z-index: 500;
   width: 100%;
   height: 100%;
-  top: 0px;
-  left: 0px;
   position: fixed;
-  display: block;
-  opacity: 0.7;
-  background-color: #fff;
-  z-index: 99;
-  text-align: center;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-#loadingImg.show {
-  position: absolute;
+.modalBox {
+  position: relative;
+  text-align: center;
   top: 50%;
   left: 50%;
-  z-index: 100;
+  position: sticky;
 }
 
-.hidden {
-  display: none;
+p img:hover {
+  cursor: -webkit-zoom-in;
 }
+
+/* image modal end */

@@ -1,12 +1,12 @@
 
 async function dongWithFetch() {
-  const dog = await fetch("https://api.thecatapi.com/v1/images/search", {
+  const dog = await fetch("https://api.thedogapi.com/v1/images/search?breed_ids=222&include_breeds=true", {
     method: "GET",
     headers: {
       "conteent-type": "application/json",
       "x-api-key": "live_ OILgWBDOdSSaiZrjLCZNgmoODOHjTT n7jKf7HYmEWKkKxgZtl0i1G4ZJDKvB 9Jt9",
     },
-  });
+  })
   const json = await dog.json()
   const imageUrl = json[0].url
   const image = document.createElement('img')
@@ -14,7 +14,7 @@ async function dongWithFetch() {
   document.querySelector(".list").appendChild(image)
 }
 
-for (let i = 0; i < 12; i++) {
+for (let i = 0; i < 15; i++) {
   dongWithFetch()
 }
 
