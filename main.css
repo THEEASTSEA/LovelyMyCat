@@ -59,6 +59,7 @@ h1 {
   border: 5px solid goldenrod;
   box-sizing: border-box;
   margin: 10px;
+  cursor: pointer;
 }
 
 .footer {

@@ -1,4 +1,3 @@
-
 async function dogWithFetch() {
   const dog = await fetch("https://api.thedogapi.com/v1/images/search?breed_ids=222&include_breeds=true", {
     method: "GET",
@@ -14,13 +13,38 @@ async function dogWithFetch() {
   document.querySelector(".list").appendChild(image)
 }
 
-for (let i = 0; i < 15; i++) {
-  dogWithFetch()
-  const a = document.querySelector('img')
+(async () => {
+  await dogWithFetch()
+  await dogWithFetch()
+  await dogWithFetch()
+  await dogWithFetch()
+  await dogWithFetch()
+  await dogWithFetch()
+  await dogWithFetch()
+  await dogWithFetch()
+  await dogWithFetch()
+  await dogWithFetch()
+  await dogWithFetch()
+  await dogWithFetch()
+  await imgDownload()
+})()
+
+function imgDownload() {
+  const imgList = document.querySelectorAll('img')
+  console.log(imgList)
+  imgList.forEach((img) => {
+    img.addEventListener('click', () => {
+      const imgDownUrl = img.src
+      const a = document.createElement('a')
+      a.href = imgDownUrl
+      a.download = 'dog'
+      a.click()
+    })
+  })
 }
 
-const abc = document.querySelector('img') // null 값이 출력됩니다ㅠㅠ
-console.log(abc)
+
+
 
 // 무한 스크롤
 // window.innerHeight : 브라우저 영역의 높이
@@ -28,9 +52,6 @@ console.log(abc)
 // document.body.offsetHeight : 요소의 실제 높이(보이는 영역 + 스크롤 영역)
 window.addEventListener('scroll', () => {
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-    // const toAdd = document.createElement('img');
-    // toAdd.src = image
-    // document.querySelector(".list").appendChild(toAdd);
     for (let i = 0; i < 6; i++) {
       dogWithFetch()
     }
