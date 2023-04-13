@@ -1,5 +1,5 @@
 
-async function dongWithFetch() {
+async function dogWithFetch() {
   const dog = await fetch("https://api.thedogapi.com/v1/images/search?breed_ids=222&include_breeds=true", {
     method: "GET",
     headers: {
@@ -15,25 +15,24 @@ async function dongWithFetch() {
 }
 
 for (let i = 0; i < 15; i++) {
-  dongWithFetch()
+  dogWithFetch()
   const a = document.querySelector('img')
 }
 
-const abc = document.querySelector('img')
+const abc = document.querySelector('img') // null 값이 출력됩니다ㅠㅠ
 console.log(abc)
 
 // 무한 스크롤
 // window.innerHeight : 브라우저 영역의 높이
 // window.scrollY : 스크롤의 이동 높이
 // document.body.offsetHeight : 요소의 실제 높이(보이는 영역 + 스크롤 영역)
-
 window.addEventListener('scroll', () => {
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
     // const toAdd = document.createElement('img');
     // toAdd.src = image
     // document.querySelector(".list").appendChild(toAdd);
     for (let i = 0; i < 6; i++) {
-      dongWithFetch()
+      dogWithFetch()
     }
   }
 });
