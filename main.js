@@ -26,25 +26,29 @@ async function dogWithFetch() {
   await dogWithFetch()
   await dogWithFetch()
   await dogWithFetch()
-  await imgDownload()
+  await modal()
 })()
 
-function imgDownload() {
+function modal() {
   const imgList = document.querySelectorAll('img')
-  console.log(imgList)
+  const modal = document.querySelector(".modal");
+  const img = document.querySelector(".img");
+  const modal_img = document.querySelector(".modal_content");
+  const span = document.querySelector(".close");
+
   imgList.forEach((img) => {
     img.addEventListener('click', () => {
-      const imgDownUrl = img.src
-      const a = document.createElement('a')
-      a.href = imgDownUrl
-      a.download = 'dog'
-      a.click()
+      modal.style.display = 'block'
+      modal_img.src = img.src;
     })
+    span.addEventListener('click', () => {
+      modal.style.display = 'none'
+    });
+    modal.addEventListener('click', () => {
+      modal.style.display = 'none'
+    });
   })
 }
-
-
-
 
 // 무한 스크롤
 // window.innerHeight : 브라우저 영역의 높이
@@ -54,6 +58,7 @@ window.addEventListener('scroll', () => {
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
     for (let i = 0; i < 6; i++) {
       dogWithFetch()
+      modal()
     }
   }
 });
